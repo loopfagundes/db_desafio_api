@@ -1,1 +1,0 @@
-{"uuid":"868c76e3-5115-4cc8-ae49-44fe0eb4a694","name":"br.com.viacep.testcases.SeachZipCodeTestCase","children":["a684af84-e0c6-4dfb-8fa3-27fb7624701c"],"befores":[{"name":"setUP","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1718657802016,"stop":1718657802430}],"afters":[],"start":1718657801979,"stop":1718657803679}
