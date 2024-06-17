@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name = "Serverest" verbose="1">
+    <test name = "Teste de API - Serverest">
+        <classes>
+            <class name="br.com.viacep.testcases.SeachZipCodeTestCase"/>
+        </classes>
+    </test>
+</suite>
