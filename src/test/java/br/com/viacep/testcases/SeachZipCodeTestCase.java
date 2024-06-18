@@ -25,7 +25,7 @@ public class SeachZipCodeTestCase extends SeachZipCodeBaseTest {
                     .get()
                 .then()
                     .log().all()
-                .spec(seachZipCodeResponse)
-                .assertThat().body(matchesJsonSchema(ExpectedJson.json("validatorZipCodeSchemas.json")));
+                    .spec(seachZipCodeResponse)
+                    .assertThat().body(matchesJsonSchema(ExpectedJson.json("validatorZipCodeSchema.json")));
     }
 }

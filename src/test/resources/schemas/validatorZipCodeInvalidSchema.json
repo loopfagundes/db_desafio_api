@@ -1,0 +1,21 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/object1718737767.json",
+  "title": "Root",
+  "type": "object",
+  "required": [
+    "erro"
+  ],
+  "properties": {
+    "erro": {
+      "$id": "#root/erro",
+      "title": "Erro",
+      "type": "boolean",
+      "examples": [
+        true
+      ],
+      "default": true
+    }
+  }
+}
