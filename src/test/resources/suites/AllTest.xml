@@ -2,7 +2,8 @@
 <suite name = "Serverest" verbose="1">
     <test name = "Teste de API - Serverest">
         <classes>
-            <class name="br.com.viacep.testcases.SeachZipCodeTestCase"/>
+            <class name="br.com.viacep.testcases.SeachZipCodeTestCase">
+            </class>
         </classes>
     </test>
 </suite>

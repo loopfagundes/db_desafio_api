@@ -9,13 +9,12 @@ import io.restassured.specification.ResponseSpecification;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.BeforeClass;
 
-public class BaseTest extends Endpoint {
-
+public class SeachZipCodeBaseTest extends Endpoint {
     public static RequestSpecification seachZipCodeRequest;
     public static ResponseSpecification seachZipCodeResponse;
 
     @BeforeClass
-    public void setUP() {
+    public void setUp() {
         seachZipCodeRequest();
         seachZipCodeResponse();
     }
