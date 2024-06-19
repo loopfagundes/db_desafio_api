@@ -18,7 +18,6 @@ public class SeachZipCodeInvalidTestCase extends SeachZipCodeInvalidBaseTest {
             priority = 2
     )
     public void seachZipCodeInvalidSuccessfully200() throws IOException {
-
         given()
                     .spec(seachZipCodeInvalidRequest)
                 .when()
@@ -27,5 +26,21 @@ public class SeachZipCodeInvalidTestCase extends SeachZipCodeInvalidBaseTest {
                     .log().all()
                     .spec(seachZipCodeInvalidResponse)
                     .assertThat().body(matchesJsonSchema(ExpectedJson.json("validatorZipCodeInvalidSchema.json")));
+    }
+
+    @Feature("GET - BUSCAR O CEP FALSO")
+    @Test(
+            description = "O metodo de buscar o cep falso.",
+            priority = 3
+    )
+    public void seachZipCodeFaker200() throws IOException {
+        given()
+                    .spec(seachZipCodeFakerRequest)
+                .when()
+                    .get()
+                .then()
+                    .log().all()
+                    .spec(seachZipCodeFakerResponse)
+                    .assertThat().body(matchesJsonSchema(ExpectedJson.json("validatorZipCodeFakerSchema.json")));
     }
 }
