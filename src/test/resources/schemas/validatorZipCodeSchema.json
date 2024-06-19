@@ -1,0 +1,121 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://viacep.com.br/ws/90619900.json",
+  "title": "Root",
+  "type": "object",
+  "required": [
+    "cep",
+    "logradouro",
+    "complemento",
+    "bairro",
+    "localidade",
+    "uf",
+    "ibge",
+    "gia",
+    "ddd",
+    "siafi"
+  ],
+  "properties": {
+    "cep": {
+      "$id": "#root/cep",
+      "title": "Cep",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "90619-900"
+      ],
+      "pattern": "^.*$"
+    },
+    "logradouro": {
+      "$id": "#root/logradouro",
+      "title": "Logradouro",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Avenida Ipiranga"
+      ],
+      "pattern": "^.*$"
+    },
+    "complemento": {
+      "$id": "#root/complemento",
+      "title": "Complemento",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "6681"
+      ],
+      "pattern": "^.*$"
+    },
+    "bairro": {
+      "$id": "#root/bairro",
+      "title": "Bairro",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Partenon"
+      ],
+      "pattern": "^.*$"
+    },
+    "localidade": {
+      "$id": "#root/localidade",
+      "title": "Localidade",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Porto Alegre"
+      ],
+      "pattern": "^.*$"
+    },
+    "uf": {
+      "$id": "#root/uf",
+      "title": "Uf",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "RS"
+      ],
+      "pattern": "^.*$"
+    },
+    "ibge": {
+      "$id": "#root/ibge",
+      "title": "Ibge",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "4314902"
+      ],
+      "pattern": "^.*$"
+    },
+    "gia": {
+      "$id": "#root/gia",
+      "title": "Gia",
+      "type": "string",
+      "default": "",
+      "examples": [
+        ""
+      ],
+      "pattern": "^.*$"
+    },
+    "ddd": {
+      "$id": "#root/ddd",
+      "title": "Ddd",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "51"
+      ],
+      "pattern": "^.*$"
+    },
+    "siafi": {
+      "$id": "#root/siafi",
+      "title": "Siafi",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "8801"
+      ],
+      "pattern": "^.*$"
+    }
+  }
+}
