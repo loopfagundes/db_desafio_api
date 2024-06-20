@@ -25,7 +25,7 @@ public class SeachZipCodeInvalidTestCase extends SeachZipCodeInvalidBaseTest {
                 .then()
                     .log().all()
                     .spec(seachZipCodeInvalidResponse)
-                    .assertThat().body(matchesJsonSchema(ExpectedJson.json("validatorZipCodeInvalidSchema.json")));
+                    .assertThat().body(matchesJsonSchema(ExpectedJson.json("validatorZipCodeInvalid.json")));
     }
 
     @Feature("GET - BUSCAR O CEP FALSO")
@@ -41,6 +41,6 @@ public class SeachZipCodeInvalidTestCase extends SeachZipCodeInvalidBaseTest {
                 .then()
                     .log().all()
                     .spec(seachZipCodeFakerResponse)
-                    .assertThat().body(matchesJsonSchema(ExpectedJson.json("validatorZipCodeFakerSchema.json")));
+                    .assertThat().body(matchesJsonSchema(ExpectedJson.json("validatorZipCodeFaker.json")));
     }
 }
