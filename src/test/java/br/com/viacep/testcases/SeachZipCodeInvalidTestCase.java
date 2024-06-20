@@ -15,7 +15,7 @@ public class SeachZipCodeInvalidTestCase extends SeachZipCodeInvalidBaseTest {
     @Feature("GET - BUSCAR O CEP INVÁLIDO")
     @Test(
             description = "O metodo de buscar o cep inválido.",
-            priority = 2
+            priority = 3
     )
     public void seachZipCodeInvalidSuccessfully200() throws IOException {
         given()
@@ -31,7 +31,7 @@ public class SeachZipCodeInvalidTestCase extends SeachZipCodeInvalidBaseTest {
     @Feature("GET - BUSCAR O CEP FALSO")
     @Test(
             description = "O metodo de buscar o cep falso.",
-            priority = 3
+            priority = 4
     )
     public void seachZipCodeFaker200() throws IOException {
         given()

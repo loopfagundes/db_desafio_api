@@ -12,11 +12,13 @@ import org.testng.annotations.BeforeClass;
 public class SeachZipCodeBaseTest extends Endpoint {
     public static RequestSpecification seachZipCodeRequest;
     public static ResponseSpecification seachZipCodeResponse;
+    public static RequestSpecification seachZipCodeAddressRequest;
 
     @BeforeClass
     public void setUp() {
         seachZipCodeRequest();
         seachZipCodeResponse();
+        seachZipCodeAddressRequest();
     }
 
     private void seachZipCodeRequest() {
@@ -31,6 +33,14 @@ public class SeachZipCodeBaseTest extends Endpoint {
         seachZipCodeResponse = new ResponseSpecBuilder()
                 .expectStatusCode(HttpStatus.SC_OK)
                 .expectContentType(ContentType.JSON)
+                .build();
+    }
+
+    private void seachZipCodeAddressRequest() {
+        seachZipCodeAddressRequest = new RequestSpecBuilder()
+                .setBaseUri(baseUri())
+                .setBasePath(basePathAddress())
+                .setContentType(ContentType.JSON)
                 .build();
     }
 }
