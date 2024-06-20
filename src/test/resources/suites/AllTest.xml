@@ -3,7 +3,7 @@
     <test name = "Teste de API - Serverest">
         <classes>
             <class name="br.com.viacep.testcases.SeachZipCodeTestCase"/>
-            <class name="br.com.viacep.testcases.SeachZipCodeInvalidTestCase"></class>
+            <class name="br.com.viacep.testcases.SeachZipCodeInvalidTestCase"/>
         </classes>
     </test>
 </suite>
