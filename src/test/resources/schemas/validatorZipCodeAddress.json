@@ -1,0 +1,97 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://viacep.com.br/ws/RS/Porto%20Alegre/Assis%20Brasil/json",
+  "title": "Root",
+  "type": "array",
+  "default": [],
+  "items":{
+    "$id": "#root/items",
+    "title": "Items",
+    "type": "object",
+    "required": [
+      "cep",
+      "logradouro",
+      "complemento",
+      "bairro",
+      "localidade",
+      "uf",
+      "ibge",
+      "gia",
+      "ddd",
+      "siafi"
+    ],
+    "properties": {
+      "cep": {
+        "$id": "#root/items/cep",
+        "title": "Cep",
+        "type": "string",
+        "default": "",
+        "pattern": "^.*$"
+      },
+      "logradouro": {
+        "$id": "#root/items/logradouro",
+        "title": "Logradouro",
+        "type": "string",
+        "default": "",
+        "pattern": "^.*$"
+      },
+      "complemento": {
+        "$id": "#root/items/complemento",
+        "title": "Complemento",
+        "type": "string",
+        "default": "",
+        "pattern": "^.*$"
+      },
+      "bairro": {
+        "$id": "#root/items/bairro",
+        "title": "Bairro",
+        "type": "string",
+        "default": "",
+        "pattern": "^.*$"
+      },
+      "localidade": {
+        "$id": "#root/items/localidade",
+        "title": "Localidade",
+        "type": "string",
+        "default": "",
+        "pattern": "^.*$"
+      },
+      "uf": {
+        "$id": "#root/items/uf",
+        "title": "Uf",
+        "type": "string",
+        "default": "",
+        "pattern": "^.*$"
+      },
+      "ibge": {
+        "$id": "#root/items/ibge",
+        "title": "Ibge",
+        "type": "string",
+        "default": "",
+        "pattern": "^.*$"
+      },
+      "gia": {
+        "$id": "#root/items/gia",
+        "title": "Gia",
+        "type": "string",
+        "default": "",
+        "pattern": "^.*$"
+      },
+      "ddd": {
+        "$id": "#root/items/ddd",
+        "title": "Ddd",
+        "type": "string",
+        "default": "",
+        "pattern": "^.*$"
+      },
+      "siafi": {
+        "$id": "#root/items/siafi",
+        "title": "Siafi",
+        "type": "string",
+        "default": "",
+        "pattern": "^.*$"
+      }
+    }
+  }
+}

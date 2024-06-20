@@ -28,4 +28,20 @@ public class SeachZipCodeTestCase extends SeachZipCodeBaseTest {
                     .spec(seachZipCodeResponse)
                     .assertThat().body(matchesJsonSchema(ExpectedJson.json("validatorZipCode.json")));
     }
+
+    @Feature("GET - BUSCAR O CEP COM ENDEREÇO")
+    @Test(
+            description = "O metodo de buscar o cep com endereço.",
+            priority = 2
+    )
+    public void seachZipCodeAddressSuccessfully200() throws IOException {
+
+        given()
+                    .spec(seachZipCodeAddressRequest)
+                .when()
+                    .get()
+                .then()
+                    .log().all()
+                    .spec(seachZipCodeResponse).assertThat().body(matchesJsonSchema(ExpectedJson.json("validatorZipCodeAddress.json")));
+    }
 }
