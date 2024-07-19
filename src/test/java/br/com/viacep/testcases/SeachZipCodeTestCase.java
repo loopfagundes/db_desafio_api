@@ -4,7 +4,6 @@ import br.com.viacep.bases.SeachZipCodeBaseTest;
 import br.com.viacep.dto.CepDto;
 import br.com.viacep.stubs.CepStub;
 import br.com.viacep.utils.ExpectedJson;
-import br.com.viacep.utils.JsonResponseSaver;
 import io.qameta.allure.Feature;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -29,7 +28,7 @@ public class SeachZipCodeTestCase extends SeachZipCodeBaseTest {
                 .then()
                     .log().body()
                 .spec(seachZipCodeResponse)
-                    .assertThat().body(matchesJsonSchema(ExpectedJson.json("validatorZipCode.json")));
+                    .assertThat().body(matchesJsonSchema(ExpectedJson.json(("validatorZipCode.json"))));
     }
 
     @Feature("GET - BUSCAR O CEP COM ENDEREÇO")
@@ -61,16 +60,16 @@ public class SeachZipCodeTestCase extends SeachZipCodeBaseTest {
                 .spec(seachZipCodeResponse)
                     .log().body()
                     .extract().as(CepDto.class);
-        Assert.assertEquals(response.getCep(), CepStub.cepStub().getCep());
-        Assert.assertEquals(response.getLogradouro(), CepStub.cepStub().getLogradouro());
-        Assert.assertEquals(response.getComplemento(), CepStub.cepStub().getComplemento());
-        Assert.assertEquals(response.getUnidade(), CepStub.cepStub().getUnidade());
-        Assert.assertEquals(response.getBairro(), CepStub.cepStub().getBairro());
-        Assert.assertEquals(response.getLocalidade(), CepStub.cepStub().getLocalidade());
-        Assert.assertEquals(response.getUf(), CepStub.cepStub().getUf());
-        Assert.assertEquals(response.getIbge(), CepStub.cepStub().getIbge());
-        Assert.assertEquals(response.getGia(), CepStub.cepStub().getGia());
-        Assert.assertEquals(response.getDdd(), CepStub.cepStub().getDdd());
-        Assert.assertEquals(response.getSiafi(), CepStub.cepStub().getSiafi());
+        Assert.assertEquals(response.getCep(), CepStub.getCepStub().getCep());
+        Assert.assertEquals(response.getLogradouro(), CepStub.getCepStub().getLogradouro());
+        Assert.assertEquals(response.getComplemento(), CepStub.getCepStub().getComplemento());
+        Assert.assertEquals(response.getUnidade(), CepStub.getCepStub().getUnidade());
+        Assert.assertEquals(response.getBairro(), CepStub.getCepStub().getBairro());
+        Assert.assertEquals(response.getLocalidade(), CepStub.getCepStub().getLocalidade());
+        Assert.assertEquals(response.getUf(), CepStub.getCepStub().getUf());
+        Assert.assertEquals(response.getIbge(), CepStub.getCepStub().getIbge());
+        Assert.assertEquals(response.getGia(), CepStub.getCepStub().getGia());
+        Assert.assertEquals(response.getDdd(), CepStub.getCepStub().getDdd());
+        Assert.assertEquals(response.getSiafi(), CepStub.getCepStub().getSiafi());
     }
 }

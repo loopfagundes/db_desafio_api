@@ -5,7 +5,7 @@ import br.com.viacep.dto.CepDto;
 public class CepStub {
     private static final CepDto cep = new CepDto();
 
-    public static CepDto cepStub() {
+    public static CepDto getCepStub() {
         cep.setCep("90619-900");
         cep.setLogradouro("Avenida Ipiranga");
         cep.setComplemento("6681");
