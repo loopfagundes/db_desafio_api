@@ -2,7 +2,7 @@ package br.com.viacep.testcases.contracts;
 
 import br.com.viacep.bases.SeachZipCodeBaseTest;
 import br.com.viacep.utils.ExpectedJson;
-import io.qameta.allure.Feature;
+import io.qameta.allure.*;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import org.testng.annotations.Test;
 
@@ -13,11 +13,10 @@ import static org.hamcrest.Matchers.hasKey;
 
 public class ContractZipCodeTest extends SeachZipCodeBaseTest {
 
-    @Feature("TESTE DE CONTRATO")
-    @Test(
-            description = "Teste de CEP valido deve retronar 200.",
-            groups = {"TESTE DE CONTRATO"}
-    )
+    @Epic("Teste de contrato")
+    @Feature("Teste o cep valido")
+    @Description("Teste de contrato deve retornar 200 se o CEP é válido.")
+    @Test
     public void seachZipCodeValid200() throws IOException {
         given()
                     .spec(seachZipCodeRequest)

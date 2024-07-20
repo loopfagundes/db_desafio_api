@@ -4,6 +4,8 @@ import br.com.viacep.bases.SeachZipCodeBaseTest;
 import br.com.viacep.dto.CepDto;
 import br.com.viacep.stubs.CepStub;
 import br.com.viacep.utils.ExpectedJson;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,11 +17,9 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 
 public class SeachZipCodeTestCase extends SeachZipCodeBaseTest {
 
-    @Feature("TESTE FUNCIONAL")
-    @Test(
-            description = "O metodo de buscar o cep.",
-            groups = {"TESTE FUNCIONAL"}
-    )
+    @Epic("Teste Funcional")
+    @Description("O método de busca do CEP deve retornar o status 200.")
+    @Test
     public void seachZipCodeSuccessfully200() throws IOException {
         given()
                 .spec(seachZipCodeRequest)
@@ -31,11 +31,9 @@ public class SeachZipCodeTestCase extends SeachZipCodeBaseTest {
                 .assertThat().body(matchesJsonSchema(ExpectedJson.json("schemas", "validatorZipCode.json")));
     }
 
-    @Feature("TESTE FUNCIONAL")
-    @Test(
-            description = "O metodo de buscar o cep com endereço.",
-            groups = {"TESTE FUNCIONAL"}
-    )
+    @Epic("Teste Funcional")
+    @Description("O metodo de buscar o cep com endereço deve retornar o status 200.")
+    @Test
     public void seachZipCodeAddressSuccessfully200() throws IOException {
         given()
                 .spec(seachZipCodeAddressRequest)
@@ -47,9 +45,10 @@ public class SeachZipCodeTestCase extends SeachZipCodeBaseTest {
                     .assertThat().body(matchesJsonSchema(ExpectedJson.json("schemas","validatorZipCodeAddress.json")));
     }
 
-    @Feature("TESTE FUNCIONAL")
+    @Epic("Teste Funcional")
+    @Description("O método de buscar o CEP com Stub deve retornar o status 200.")
     @Test(
-            description = "O metodo de buscar o cep com Stub",
+            description = "O método de buscar o CEP com Stub deve retornar o status 200.",
             groups = {"TESTE FUNCIONAL"}
     )
     public void seachZipCodeStubSuccessfully200() {
