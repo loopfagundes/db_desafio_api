@@ -13,12 +13,14 @@ public class SeachZipCodeBaseTest extends Endpoint {
     public static RequestSpecification seachZipCodeRequest;
     public static ResponseSpecification seachZipCodeResponse;
     public static RequestSpecification seachZipCodeAddressRequest;
+    public static ResponseSpecification status_SC_OK;
 
     @BeforeClass
     public void setUp() {
         seachZipCodeRequest();
         seachZipCodeResponse();
         seachZipCodeAddressRequest();
+        status_SC_OK();
     }
 
     private void seachZipCodeRequest() {
@@ -41,6 +43,14 @@ public class SeachZipCodeBaseTest extends Endpoint {
                 .setBaseUri(baseUri())
                 .setBasePath(basePathAddress())
                 .setContentType(ContentType.JSON)
+                .build();
+    }
+
+
+    //TESTADO:
+    private void status_SC_OK() {
+        status_SC_OK = new ResponseSpecBuilder()
+                .expectStatusCode(HttpStatus.SC_OK)
                 .build();
     }
 }

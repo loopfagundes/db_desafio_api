@@ -1,4 +1,4 @@
-package br.com.viacep.testcases;
+package br.com.viacep.testcases.functionalTests;
 
 import br.com.viacep.bases.SeachZipCodeBaseTest;
 import br.com.viacep.dto.CepDto;
@@ -15,26 +15,26 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 
 public class SeachZipCodeTestCase extends SeachZipCodeBaseTest {
 
-    @Feature("GET - BUSCAR O CEP")
+    @Feature("TESTE FUNCIONAL")
     @Test(
             description = "O metodo de buscar o cep.",
-            priority = 1
+            groups = {"TESTE FUNCIONAL"}
     )
     public void seachZipCodeSuccessfully200() throws IOException {
         given()
                 .spec(seachZipCodeRequest)
                 .when()
-                    .get()
+                .get()
                 .then()
-                    .log().body()
+                .log().body()
                 .spec(seachZipCodeResponse)
-                    .assertThat().body(matchesJsonSchema(ExpectedJson.json(("validatorZipCode.json"))));
+                .assertThat().body(matchesJsonSchema(ExpectedJson.json("schemas", "validatorZipCode.json")));
     }
 
-    @Feature("GET - BUSCAR O CEP COM ENDEREÇO")
+    @Feature("TESTE FUNCIONAL")
     @Test(
             description = "O metodo de buscar o cep com endereço.",
-            priority = 2
+            groups = {"TESTE FUNCIONAL"}
     )
     public void seachZipCodeAddressSuccessfully200() throws IOException {
         given()
@@ -44,12 +44,13 @@ public class SeachZipCodeTestCase extends SeachZipCodeBaseTest {
                 .then()
                     .log().body()
                 .spec(seachZipCodeResponse)
-                    .assertThat().body(matchesJsonSchema(ExpectedJson.json("validatorZipCodeAddress.json")));
+                    .assertThat().body(matchesJsonSchema(ExpectedJson.json("schemas","validatorZipCodeAddress.json")));
     }
 
-    @Feature("GET - BUSCAR COM O STUB")
+    @Feature("TESTE FUNCIONAL")
     @Test(
-            description = "O metodo de buscar o cep com Stub"
+            description = "O metodo de buscar o cep com Stub",
+            groups = {"TESTE FUNCIONAL"}
     )
     public void seachZipCodeStubSuccessfully200() {
         CepDto response = given()

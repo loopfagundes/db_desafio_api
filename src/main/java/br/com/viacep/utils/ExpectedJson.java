@@ -6,7 +6,7 @@ import java.nio.file.Path;
 
 public class ExpectedJson {
 
-    public static String json(String nameFile) throws IOException {
-        return Files.readString(Path.of("src/test/resources/schemas/" + nameFile));
+    public static String json(String folderName, String nameFile) throws IOException {
+        return Files.readString(Path.of("src/test/resources/" + folderName + "/" + nameFile));
     }
 }
