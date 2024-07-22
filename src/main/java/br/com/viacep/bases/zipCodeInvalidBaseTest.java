@@ -1,6 +1,6 @@
 package br.com.viacep.bases;
 
-import br.com.viacep.utils.Endpoint;
+import br.com.viacep.utils.endponits.EndpointConfig;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
@@ -9,7 +9,7 @@ import io.restassured.specification.ResponseSpecification;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.BeforeClass;
 
-public class SeachZipCodeInvalidBaseTest extends Endpoint {
+public class zipCodeInvalidBaseTest extends EndpointConfig {
     public static RequestSpecification seachZipCodeInvalidRequest;
     public static ResponseSpecification seachZipCodeInvalidResponse;
     public static RequestSpecification seachZipCodeFakerRequest;

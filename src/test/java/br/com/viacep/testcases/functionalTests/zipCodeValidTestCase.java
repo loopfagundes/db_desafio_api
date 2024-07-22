@@ -1,12 +1,11 @@
 package br.com.viacep.testcases.functionalTests;
 
-import br.com.viacep.bases.SeachZipCodeBaseTest;
+import br.com.viacep.bases.zipCodeValidBaseTest;
 import br.com.viacep.dto.CepDto;
 import br.com.viacep.stubs.CepStub;
 import br.com.viacep.utils.ExpectedJson;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,45 +14,42 @@ import java.io.IOException;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 
-public class SeachZipCodeTestCase extends SeachZipCodeBaseTest {
+public class zipCodeValidTestCase extends zipCodeValidBaseTest {
 
     @Epic("Teste Funcional")
     @Description("O método de busca do CEP deve retornar o status 200.")
     @Test
     public void seachZipCodeSuccessfully200() throws IOException {
         given()
-                .spec(seachZipCodeRequest)
+                    .spec(seachZipCodeRequest)
                 .when()
-                .get()
+                    .get()
                 .then()
-                .log().body()
-                .spec(seachZipCodeResponse)
-                .assertThat().body(matchesJsonSchema(ExpectedJson.json("schemas", "validatorZipCode.json")));
+                    .log().body()
+                    .spec(seachZipCodeResponse)
+                    .assertThat().body(matchesJsonSchema(ExpectedJson.json("schemas", "schemaZipCode.json")));
     }
 
     @Epic("Teste Funcional")
     @Description("O metodo de buscar o cep com endereço deve retornar o status 200.")
     @Test
-    public void seachZipCodeAddressSuccessfully200() throws IOException {
+    public void seachZipCodeWithAddressSuccessfully200() throws IOException {
         given()
-                .spec(seachZipCodeAddressRequest)
+                    .spec(seachZipCodeWithAddressRequest)
                 .when()
                     .get()
                 .then()
                     .log().body()
-                .spec(seachZipCodeResponse)
-                    .assertThat().body(matchesJsonSchema(ExpectedJson.json("schemas","validatorZipCodeAddress.json")));
+                    .spec(seachZipCodeResponse)
+                    .assertThat().body(matchesJsonSchema(ExpectedJson.json("schemas","schemaZipCodeAddress.json")));
     }
 
     @Epic("Teste Funcional")
     @Description("O método de buscar o CEP com Stub deve retornar o status 200.")
-    @Test(
-            description = "O método de buscar o CEP com Stub deve retornar o status 200.",
-            groups = {"TESTE FUNCIONAL"}
-    )
-    public void seachZipCodeStubSuccessfully200() {
+    @Test
+    public void assertValidZipCodeWithStubSuccessfully200() {
         CepDto response = given()
-                .spec(seachZipCodeRequest)
+                    .spec(seachZipCodeRequest)
                 .when()
                     .get()
                 .then()

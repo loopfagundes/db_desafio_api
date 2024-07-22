@@ -1,6 +1,6 @@
 package br.com.viacep.testcases.functionalTests;
 
-import br.com.viacep.bases.SeachZipCodeInvalidBaseTest;
+import br.com.viacep.bases.zipCodeInvalidBaseTest;
 import br.com.viacep.utils.ExpectedJson;
 import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
@@ -10,7 +10,7 @@ import java.io.IOException;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 
-public class SeachZipCodeInvalidTestCase extends SeachZipCodeInvalidBaseTest {
+public class zipCodeInvalidTestCase extends zipCodeInvalidBaseTest {
 
     @Feature("TESTE FUNCIONAL")
     @Test(

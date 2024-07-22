@@ -1,6 +1,6 @@
 package br.com.viacep.bases;
 
-import br.com.viacep.utils.Endpoint;
+import br.com.viacep.utils.endponits.EndpointConfig;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
@@ -9,18 +9,18 @@ import io.restassured.specification.ResponseSpecification;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.BeforeClass;
 
-public class SeachZipCodeBaseTest extends Endpoint {
+public class zipCodeValidBaseTest extends EndpointConfig {
     public static RequestSpecification seachZipCodeRequest;
     public static ResponseSpecification seachZipCodeResponse;
-    public static RequestSpecification seachZipCodeAddressRequest;
-    public static ResponseSpecification status_SC_OK;
+    public static RequestSpecification seachZipCodeWithAddressRequest;
+    public static RequestSpecification zipCodeFormatRequest;
 
     @BeforeClass
     public void setUp() {
         seachZipCodeRequest();
         seachZipCodeResponse();
-        seachZipCodeAddressRequest();
-        status_SC_OK();
+        seachZipCodeWithAddressRequest();
+        zipCodeFormatRequest();
     }
 
     private void seachZipCodeRequest() {
@@ -38,19 +38,19 @@ public class SeachZipCodeBaseTest extends Endpoint {
                 .build();
     }
 
-    private void seachZipCodeAddressRequest() {
-        seachZipCodeAddressRequest = new RequestSpecBuilder()
+    private void zipCodeFormatRequest() {
+        zipCodeFormatRequest = new RequestSpecBuilder()
                 .setBaseUri(baseUri())
-                .setBasePath(basePathAddress())
+                .setBasePath(basePathZipCodeFormat())
                 .setContentType(ContentType.JSON)
                 .build();
     }
 
-
-    //TESTADO:
-    private void status_SC_OK() {
-        status_SC_OK = new ResponseSpecBuilder()
-                .expectStatusCode(HttpStatus.SC_OK)
+    private void seachZipCodeWithAddressRequest() {
+        seachZipCodeWithAddressRequest = new RequestSpecBuilder()
+                .setBaseUri(baseUri())
+                .setBasePath(basePathAddress())
+                .setContentType(ContentType.JSON)
                 .build();
     }
 }

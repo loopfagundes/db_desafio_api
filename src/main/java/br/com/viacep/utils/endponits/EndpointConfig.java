@@ -1,11 +1,9 @@
-package br.com.viacep.utils;
+package br.com.viacep.utils.endponits;
 
-public class Endpoint {
-    private static String BASE_URI;
-    private static String BASE_PATH_ZIP_CODE;
-    private static String BASE_PATH_ADDRESS;
-    private static String BASE_PATH_ZIP_CODE_INVALID;
-    private static String BASE_PATH_ZIP_CODE_FAKER;
+import br.com.viacep.utils.FakeGenerator;
+import br.com.viacep.utils.PropertiesData;
+
+public class EndpointConfig extends ServiceUrlPaths {
 
     protected static String baseUri() {
         return BASE_URI = PropertiesData.getPropertiesData("url", "BASE_URI");
@@ -13,6 +11,10 @@ public class Endpoint {
 
     protected static String basePathZipCode() {
         return BASE_PATH_ZIP_CODE = PropertiesData.getPropertiesData("url", "BASE_PATH_ZIP_CODE");
+    }
+
+    protected static String basePathZipCodeFormat() {
+        return BASE_PATH_ZIP_CODE_FORMAT = PropertiesData.getPropertiesData("url", "BASE_PATH_ZIP_CODE_FORMAT");
     }
 
     protected static String basePathAddress() {
