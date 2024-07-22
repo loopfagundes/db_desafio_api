@@ -12,6 +12,8 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 
 public class zipCodeInvalidTestCase extends zipCodeInvalidBaseTest {
 
+    //arrume todos metodos aqui para melhoras estrutura
+
     @Feature("TESTE FUNCIONAL")
     @Test(
             description = "O metodo de buscar o cep inválido.",
@@ -23,7 +25,7 @@ public class zipCodeInvalidTestCase extends zipCodeInvalidBaseTest {
                 .when()
                     .get()
                 .then()
-                    .log().all()
+                    .log().body()
                     .spec(seachZipCodeInvalidResponse)
                     .assertThat().body(matchesJsonSchema(ExpectedJson.json("schemas","validatorZipCodeInvalid.json")));
     }
@@ -39,7 +41,7 @@ public class zipCodeInvalidTestCase extends zipCodeInvalidBaseTest {
                 .when()
                     .get()
                 .then()
-                    .log().all()
+                    .log().body()
                     .spec(seachZipCodeFakerResponse)
                     .assertThat().body(matchesJsonSchema(ExpectedJson.json("schemas","validatorZipCodeFaker.json")));
     }

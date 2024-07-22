@@ -2,6 +2,7 @@ package br.com.viacep.testcases.contracts;
 
 import br.com.viacep.bases.zipCodeValidBaseTest;
 import br.com.viacep.utils.ExpectedJson;
+import br.com.viacep.utils.ZipCodeProvider;
 import io.qameta.allure.*;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import org.apache.http.HttpStatus;
@@ -10,8 +11,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasKey;
+import static org.hamcrest.Matchers.*;
 
 public class ContractZipCodeTest extends zipCodeValidBaseTest {
 
@@ -88,5 +88,21 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
                     .body("$", hasKey("gia"))
                     .body("$", hasKey("ddd"))
                     .body("$", hasKey("siafi"));
+    }
+
+    @Epic("Teste Funcional")
+    @Feature("Teste de CEP invalido com Data Provider")
+    @Description("O método de busca do CEP invalido com Data Provider deve retornar o status 400.")
+    @Test(dataProvider = "zipCodeInvalidProvider", dataProviderClass = ZipCodeProvider.class)
+    public void teste(String zipCodeInvalid) {
+        given()
+                    .spec(baseUrl)
+                .when()
+                    .get( zipCodeInvalid + "/json")
+                .then()
+                    .statusCode(HttpStatus.SC_BAD_REQUEST)
+                    .body(containsString("Http 400"))
+                    .body(containsString("Verifique a URL"))
+                    .body(containsString("{Bad Request}"));
     }
 }

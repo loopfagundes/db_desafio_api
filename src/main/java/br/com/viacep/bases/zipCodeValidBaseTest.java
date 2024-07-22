@@ -10,6 +10,7 @@ import org.apache.http.HttpStatus;
 import org.testng.annotations.BeforeClass;
 
 public class zipCodeValidBaseTest extends EndpointConfig {
+    public static RequestSpecification baseUrl;
     public static RequestSpecification seachZipCodeRequest;
     public static ResponseSpecification seachZipCodeResponse;
     public static RequestSpecification seachZipCodeWithAddressRequest;
@@ -17,10 +18,18 @@ public class zipCodeValidBaseTest extends EndpointConfig {
 
     @BeforeClass
     public void setUp() {
+        baseUrl();
         seachZipCodeRequest();
         seachZipCodeResponse();
         seachZipCodeWithAddressRequest();
         zipCodeFormatRequest();
+    }
+
+    private void baseUrl() {
+        baseUrl = new RequestSpecBuilder()
+                .setBaseUri(baseUri())
+                .setContentType(ContentType.JSON)
+                .build();
     }
 
     private void seachZipCodeRequest() {
