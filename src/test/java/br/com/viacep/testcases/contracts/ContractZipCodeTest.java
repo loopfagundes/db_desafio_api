@@ -94,7 +94,7 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
     @Feature("Teste o CEP invalido com Data Provider.")
     @Description("O método de busca do CEP invalido com Data Provider deve retornar o status 400.")
     @Test(dataProvider = "zipCodeInvalidProvider", dataProviderClass = ZipCodeProvider.class)
-    public void zipCodeWithDataProviderSuccessfully200(String zipCodeInvalid) {
+    public void zipCodeWithDataProviderBadRequest400(String zipCodeInvalid) {
         given()
                     .spec(baseUrl)
                 .when()
