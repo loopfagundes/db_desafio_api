@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.*;
 public class ContractZipCodeTest extends zipCodeValidBaseTest {
 
     @Epic("Teste de contrato")
-    @Feature("Teste o cep valido")
+    @Feature("Teste o CEP e valido as chaves.")
     @Description("Teste de contrato deve retornar 200 e valido se as chaves estão presentes no JSON resposta.")
     @Test
     public void validZipCodeSuccessfully200() throws IOException {
@@ -41,7 +41,7 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
     }
 
     @Epic("Teste de contrato")
-    @Feature("Teste o cep valido")
+    @Feature("Teste o CEP e valido os valores das chaves.")
     @Description("O teste de contrato deve retornar 200 e valido se os valores das chaves estiverem corretos no JSON resposta.")
     @Test
     public void equalsZipCodeSuccessfully200() throws IOException {
@@ -66,10 +66,10 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
     }
 
     @Epic("Teste de contrato")
-    @Feature("Teste o cep valido")
+    @Feature("Teste o CEP com formatação.")
     @Description("Teste de contrato deve retornar 200 e valido se o CEP formatação.")
     @Test
-    public void validFormattingZipCodeSuccessfully200() throws IOException {
+    public void validateZipCodeFormatSuccessfully200() throws IOException {
         given()
                     .spec(zipCodeFormatRequest)
                 .when()
@@ -90,11 +90,11 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
                     .body("$", hasKey("siafi"));
     }
 
-    @Epic("Teste Funcional")
-    @Feature("Teste de CEP invalido com Data Provider")
+    @Epic("Teste de contrato")
+    @Feature("Teste o CEP invalido com Data Provider.")
     @Description("O método de busca do CEP invalido com Data Provider deve retornar o status 400.")
     @Test(dataProvider = "zipCodeInvalidProvider", dataProviderClass = ZipCodeProvider.class)
-    public void teste(String zipCodeInvalid) {
+    public void zipCodeWithDataProviderSuccessfully200(String zipCodeInvalid) {
         given()
                     .spec(baseUrl)
                 .when()
