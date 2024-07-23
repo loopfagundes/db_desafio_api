@@ -15,7 +15,7 @@ import static org.hamcrest.Matchers.*;
 
 public class ContractZipCodeTest extends zipCodeValidBaseTest {
 
-    @Epic("Teste de contrato")
+    @Epic("Teste de Contrato")
     @Feature("Teste o CEP e valido as chaves.")
     @Description("Teste de contrato deve retornar 200 e valido se as chaves estão presentes no JSON resposta.")
     @Test
@@ -40,7 +40,7 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
                     .body("$", hasKey("siafi"));
     }
 
-    @Epic("Teste de contrato")
+    @Epic("Teste de Contrato")
     @Feature("Teste o CEP e valido os valores das chaves.")
     @Description("O teste de contrato deve retornar 200 e valido se os valores das chaves estiverem corretos no JSON resposta.")
     @Test
@@ -65,7 +65,7 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
                     .body("$", hasKey("siafi")).body("siafi", equalTo("8801"));
     }
 
-    @Epic("Teste de contrato")
+    @Epic("Teste de Contrato")
     @Feature("Teste o CEP com formatação.")
     @Description("Teste de contrato deve retornar 200 e valido se o CEP formatação.")
     @Test
@@ -90,7 +90,7 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
                     .body("$", hasKey("siafi"));
     }
 
-    @Epic("Teste de contrato")
+    @Epic("Teste de Contrato")
     @Feature("Teste o CEP invalido com Data Provider.")
     @Description("O método de busca do CEP invalido com Data Provider deve retornar o status 400.")
     @Test(dataProvider = "contractZipCodeInvalidProvider", dataProviderClass = ZipCodeProvider.class)
