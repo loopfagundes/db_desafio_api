@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
-public class zipCodeValidTestCase extends zipCodeValidBaseTest {
+public class ZipCodeValidTestCase extends zipCodeValidBaseTest {
 
     @Epic("Teste Funcional")
     @Feature("Teste o CEP com valido schema JSON.")

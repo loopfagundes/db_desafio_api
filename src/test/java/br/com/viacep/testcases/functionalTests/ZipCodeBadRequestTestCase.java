@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class zipCodeBadRequestTestCase extends zipCodeBadRequestBaseTest {
+public class ZipCodeBadRequestTestCase extends zipCodeBadRequestBaseTest {
 
     @Epic("Teste Funcional")
     @Feature("Teste o CEP vazio.")

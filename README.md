@@ -82,7 +82,14 @@ git clone https://github.com/loopfagundes/db_desafio_api.git
 #### Como executar?
 Para executar na sua máquina local, o comando ou através de sua IDE:
 ```bash
+mvn clean
+```
+```bash
 mvn test
 ```
+---
+#### Screenshot:
+![](src/main/resources/img/CapturaDeTelaDaAllureReport.png)
+
 ---
 *Funciona na minha máquina* :coffee: 

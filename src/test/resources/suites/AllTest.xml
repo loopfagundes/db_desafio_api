@@ -2,9 +2,9 @@
 <suite name = "Via Cep" verbose="1">
     <test name = "SUITES: Teste de API - Via Cep">
         <classes>
-            <class name="br.com.viacep.testcases.functionalTests.zipCodeValidTestCase"/>
-            <class name="br.com.viacep.testcases.functionalTests.zipCodeErroTestCase"/>
-            <class name="br.com.viacep.testcases.functionalTests.zipCodeBadRequestTestCase"/>
+            <class name="br.com.viacep.testcases.functionalTests.ZipCodeValidTestCase"/>
+            <class name="br.com.viacep.testcases.functionalTests.ZipCodeErroTestCase"/>
+            <class name="br.com.viacep.testcases.functionalTests.ZipCodeBadRequestTestCase"/>
             <class name="br.com.viacep.testcases.contracts.ContractZipCodeTest"/>
             <class name="br.com.viacep.testcases.performance.PerformaceTest"/>
         </classes>
