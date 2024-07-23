@@ -2,6 +2,8 @@ package br.com.viacep.testcases.functionalTests;
 
 import br.com.viacep.bases.zipCodeInvalidBaseTest;
 import br.com.viacep.utils.ExpectedJson;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
 
@@ -12,11 +14,10 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 
 public class zipCodeInvalidTestCase extends zipCodeInvalidBaseTest {
 
-    @Feature("TESTE FUNCIONAL")
-    @Test(
-            description = "O metodo de buscar o cep inválido.",
-            groups = {"TESTE FUNCIONAL"}
-    )
+    @Epic("Teste Funcional")
+    @Feature("Teste o CEP invalido.")
+    @Description("O metodo de buscar o cep inválido deve retornar 200.")
+    @Test
     public void seachZipCodeInvalidSuccessfully200() throws IOException {
         given()
                     .spec(seachZipCodeInvalidRequest)
@@ -28,11 +29,10 @@ public class zipCodeInvalidTestCase extends zipCodeInvalidBaseTest {
                     .assertThat().body(matchesJsonSchema(ExpectedJson.json("schemas","validatorZipCodeInvalid.json")));
     }
 
-    @Feature("TESTE FUNCIONAL")
-    @Test(
-            description = "O metodo de buscar o cep falso.",
-            groups = {"TESTE FUNCIONAL"}
-    )
+    @Epic("Teste Funcional")
+    @Feature("Teste o CEP com numero falso.")
+    @Description("O metodo de buscar o cep falso deve retornar 200")
+    @Test
     public void seachZipCodeFaker200() throws IOException {
         given()
                     .spec(seachZipCodeFakerRequest)
