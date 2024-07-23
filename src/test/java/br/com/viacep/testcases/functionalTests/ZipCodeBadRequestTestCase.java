@@ -9,6 +9,7 @@ import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.containsString;
 
 public class ZipCodeBadRequestTestCase extends zipCodeBadRequestBaseTest {
 
@@ -23,7 +24,7 @@ public class ZipCodeBadRequestTestCase extends zipCodeBadRequestBaseTest {
                     .get()
                 .then()
                     .spec(statusBadRequest)
-                    .body(Matchers.containsString("Http 400"));
+                    .body(containsString("Http 400"));
     }
 
     @Epic("Teste Funcional")
@@ -37,7 +38,7 @@ public class ZipCodeBadRequestTestCase extends zipCodeBadRequestBaseTest {
                     .get(zipCodeInvalid + "/json")
                 .then()
                 .spec(statusBadRequest)
-                    .body(Matchers.containsString("Http 400"));
+                    .body(containsString("Http 400"));
     }
 
     @Epic("Teste Funcional")
@@ -51,7 +52,7 @@ public class ZipCodeBadRequestTestCase extends zipCodeBadRequestBaseTest {
                     .get()
                 .then()
                     .spec(statusBadRequest)
-                    .body(Matchers.containsString("Http 400"));
+                    .body(containsString("Http 400"));
     }
 
     @Epic("Teste Funcional")
@@ -65,7 +66,7 @@ public class ZipCodeBadRequestTestCase extends zipCodeBadRequestBaseTest {
                     .get()
                 .then()
                     .spec(statusBadRequest)
-                    .body(Matchers.containsString("Http 400"));
+                    .body(containsString("Http 400"));
     }
 
     @Epic("Teste Funcional")
@@ -79,6 +80,6 @@ public class ZipCodeBadRequestTestCase extends zipCodeBadRequestBaseTest {
                     .get()
                 .then()
                     .spec(statusBadRequest)
-                    .body(Matchers.containsString("Http 400"));
+                    .body(containsString("Http 400"));
     }
 }
