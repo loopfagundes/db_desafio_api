@@ -12,17 +12,17 @@ import org.testng.annotations.BeforeClass;
 public class zipCodeValidBaseTest extends EndpointConfig {
     public static RequestSpecification baseUrl;
     public static RequestSpecification seachZipCodeRequest;
-    public static ResponseSpecification seachZipCodeResponse;
     public static RequestSpecification seachZipCodeWithAddressRequest;
-    public static RequestSpecification zipCodeFormatRequest;
+    public static RequestSpecification zipCodeFormattingRequest;
+    public static ResponseSpecification statusOK;
 
     @BeforeClass
     public void setUp() {
         baseUrl();
         seachZipCodeRequest();
-        seachZipCodeResponse();
         seachZipCodeWithAddressRequest();
-        zipCodeFormatRequest();
+        zipCodeFormattingRequest();
+        responseStatusOK();
     }
 
     private void baseUrl() {
@@ -40,17 +40,10 @@ public class zipCodeValidBaseTest extends EndpointConfig {
                 .build();
     }
 
-    private void seachZipCodeResponse() {
-        seachZipCodeResponse = new ResponseSpecBuilder()
-                .expectStatusCode(HttpStatus.SC_OK)
-                .expectContentType(ContentType.JSON)
-                .build();
-    }
-
-    private void zipCodeFormatRequest() {
-        zipCodeFormatRequest = new RequestSpecBuilder()
+    private void zipCodeFormattingRequest() {
+        zipCodeFormattingRequest = new RequestSpecBuilder()
                 .setBaseUri(baseUri())
-                .setBasePath(basePathZipCodeFormat())
+                .setBasePath(basePathZipCodeFormatting())
                 .setContentType(ContentType.JSON)
                 .build();
     }
@@ -60,6 +53,13 @@ public class zipCodeValidBaseTest extends EndpointConfig {
                 .setBaseUri(baseUri())
                 .setBasePath(basePathAddress())
                 .setContentType(ContentType.JSON)
+                .build();
+    }
+
+    private void responseStatusOK() {
+        statusOK = new ResponseSpecBuilder()
+                .expectStatusCode(HttpStatus.SC_OK)
+                .expectContentType(ContentType.JSON)
                 .build();
     }
 }

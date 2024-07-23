@@ -4,13 +4,13 @@ import br.com.viacep.bases.zipCodeValidBaseTest;
 import br.com.viacep.utils.ExpectedJson;
 import br.com.viacep.utils.ZipCodeProvider;
 import io.qameta.allure.*;
-import io.restassured.module.jsv.JsonSchemaValidator;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static org.hamcrest.Matchers.*;
 
 public class ContractZipCodeTest extends zipCodeValidBaseTest {
@@ -25,8 +25,8 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
                 .when()
                     .get()
                 .then()
-                    .statusCode(HttpStatus.SC_OK)
-                    .body(JsonSchemaValidator.matchesJsonSchema(ExpectedJson.json("contracts", "zipCode.json")))
+                    .spec(statusOK)
+                    .body(matchesJsonSchema(ExpectedJson.json("contracts", "zipCodeContract.json")))
                     .body("$", hasKey("cep"))
                     .body("$", hasKey("logradouro"))
                     .body("$", hasKey("complemento"))
@@ -50,8 +50,8 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
                 .when()
                     .get()
                 .then()
-                .spec(seachZipCodeResponse)
-                    .body(JsonSchemaValidator.matchesJsonSchema(ExpectedJson.json("contracts", "zipCode.json")))
+                    .spec(statusOK)
+                    .body(matchesJsonSchema(ExpectedJson.json("contracts", "zipCodeContract.json")))
                     .body("$", hasKey("cep")).body("cep", equalTo("90619-900"))
                     .body("$", hasKey("logradouro")).body("logradouro", equalTo("Avenida Ipiranga"))
                     .body("$", hasKey("complemento")).body("complemento", equalTo("6681"))
@@ -69,14 +69,14 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
     @Feature("Teste o CEP com formatação.")
     @Description("Teste de contrato deve retornar 200 e valido se o CEP formatação.")
     @Test
-    public void validateZipCodeFormatSuccessfully200() throws IOException {
+    public void validateZipCodeFormattingSuccessfully200() throws IOException {
         given()
-                    .spec(zipCodeFormatRequest)
+                    .spec(zipCodeFormattingRequest)
                 .when()
                     .get()
                 .then()
-                    .statusCode(HttpStatus.SC_OK)
-                    .body(JsonSchemaValidator.matchesJsonSchema(ExpectedJson.json("contracts", "zipCode.json")))
+                    .spec(statusOK)
+                    .body(matchesJsonSchema(ExpectedJson.json("contracts", "zipCodeContract.json")))
                     .body("$", hasKey("cep"))
                     .body("$", hasKey("logradouro"))
                     .body("$", hasKey("complemento"))
@@ -93,7 +93,7 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
     @Epic("Teste de contrato")
     @Feature("Teste o CEP invalido com Data Provider.")
     @Description("O método de busca do CEP invalido com Data Provider deve retornar o status 400.")
-    @Test(dataProvider = "zipCodeInvalidProvider", dataProviderClass = ZipCodeProvider.class)
+    @Test(dataProvider = "contractZipCodeInvalidProvider", dataProviderClass = ZipCodeProvider.class)
     public void zipCodeWithDataProviderBadRequest400(String zipCodeInvalid) {
         given()
                     .spec(baseUrl)

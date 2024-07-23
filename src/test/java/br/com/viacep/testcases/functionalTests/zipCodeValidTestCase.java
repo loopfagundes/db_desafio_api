@@ -3,17 +3,14 @@ package br.com.viacep.testcases.functionalTests;
 import br.com.viacep.bases.zipCodeValidBaseTest;
 import br.com.viacep.dto.CepDto;
 import br.com.viacep.stubs.CepStub;
-import br.com.viacep.utils.ExpectedJson;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
-
 import static io.restassured.RestAssured.given;
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class zipCodeValidTestCase extends zipCodeValidBaseTest {
 
@@ -21,30 +18,30 @@ public class zipCodeValidTestCase extends zipCodeValidBaseTest {
     @Feature("Teste o CEP com valido schema JSON.")
     @Description("O método de busca do CEP deve retornar o status 200.")
     @Test
-    public void seachZipCodeSuccessfully200() throws IOException {
+    public void seachZipCodeSuccessfully200() {
         given()
                     .spec(seachZipCodeRequest)
                 .when()
                     .get()
                 .then()
                     .log().body()
-                    .spec(seachZipCodeResponse)
-                    .assertThat().body(matchesJsonSchema(ExpectedJson.json("schemas", "schemaZipCode.json")));
+                    .spec(statusOK)
+                    .assertThat().body(matchesJsonSchemaInClasspath("schemas/schemaZipCodeValid.json"));
     }
 
     @Epic("Teste Funcional")
     @Feature("Teste o CEP com endereço e valido schema JSON.")
-    @Description("O metodo de buscar o cep com endereço deve retornar o status 200.")
+    @Description("O metodo de buscar o CEP com endereço deve retornar o status 200.")
     @Test
-    public void seachZipCodeWithAddressSuccessfully200() throws IOException {
+    public void seachZipCodeWithAddressSuccessfully200() {
         given()
                     .spec(seachZipCodeWithAddressRequest)
                 .when()
                     .get()
                 .then()
                     .log().body()
-                    .spec(seachZipCodeResponse)
-                    .assertThat().body(matchesJsonSchema(ExpectedJson.json("schemas","schemaZipCodeAddress.json")));
+                    .spec(statusOK)
+                    .assertThat().body(matchesJsonSchemaInClasspath("schemas/schemaZipCodeAddress.json"));
     }
 
     @Epic("Teste Funcional")
@@ -57,7 +54,7 @@ public class zipCodeValidTestCase extends zipCodeValidBaseTest {
                 .when()
                     .get()
                 .then()
-                .spec(seachZipCodeResponse)
+                    .spec(statusOK)
                     .log().body()
                     .extract().as(CepDto.class);
         Assert.assertEquals(response.getCep(), CepStub.getCepStub().getCep());

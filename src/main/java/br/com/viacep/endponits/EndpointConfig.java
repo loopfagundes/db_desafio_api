@@ -13,19 +13,35 @@ public class EndpointConfig extends ServiceUrlPaths {
         return BASE_PATH_ZIP_CODE = PropertiesData.getPropertiesData("url", "BASE_PATH_ZIP_CODE");
     }
 
-    protected static String basePathZipCodeFormat() {
-        return BASE_PATH_ZIP_CODE_FORMAT = PropertiesData.getPropertiesData("url", "BASE_PATH_ZIP_CODE_FORMAT");
+    protected static String basePathZipCodeFormatting() {
+        return BASE_PATH_ZIP_CODE_FORMATTING = PropertiesData.getPropertiesData("url", "BASE_PATH_ZIP_CODE_FORMAT");
     }
 
     protected static String basePathAddress() {
         return BASE_PATH_ADDRESS = PropertiesData.getPropertiesData("url", "BASE_PATH_ADDRESS");
     }
 
-    protected static String basePathZipCodeInvalid() {
-        return BASE_PATH_ZIP_CODE_INVALID = PropertiesData.getPropertiesData("url", "BASE_PATH_ZIP_CODE_INVALID");
+    protected static String basePathZipCodeErro() {
+        return BASE_PATH_ZIP_CODE_ERRO = PropertiesData.getPropertiesData("url", "BASE_PATH_ZIP_CODE_ERRO");
     }
 
     protected static String basePathZipCodeFaker() {
-        return BASE_PATH_ZIP_CODE_FAKER = FakeGenerator.fakeZipCode("8","url", "BASE_PATH_ZIP_CODE_FAKER");
+        return BASE_PATH_ZIP_CODE_FAKER = FakeGenerator.fakeZipCode("url", "BASE_PATH_ZIP_CODE_FAKER");
+    }
+
+    protected static String basePathZipCodeEmpty() {
+        return BASE_PATH_ZIP_CODE_EMPTY = PropertiesData.getPropertiesData("url", "BASE_PATH_ZIP_CODE_EMPTY");
+    }
+
+    protected static String basePathZipCodePublicAreaNotExist() {
+        return BASE_PATH_PUBLIC_AREA_NOT_EXIST = PropertiesData.getPropertiesData("url", "BASE_PATH_PUBLIC_AREA_NOT_EXIST");
+    }
+
+    protected static String basePathZipCodeCityNotExist() {
+        return BASE_PATH_CITY_NOT_EXIST = PropertiesData.getPropertiesData("url", "BASE_PATH_CITY_NOT_EXIST");
+    }
+
+    protected static String basePathZipCodeUFNotExist() {
+        return BASE_PATH_UF_NOT_EXIST = PropertiesData.getPropertiesData("url", "BASE_PATH_UF_NOT_EXIST");
     }
 }
