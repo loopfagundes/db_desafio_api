@@ -12,8 +12,6 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 
 public class zipCodeInvalidTestCase extends zipCodeInvalidBaseTest {
 
-    //arrume todos metodos aqui para melhoras estrutura
-
     @Feature("TESTE FUNCIONAL")
     @Test(
             description = "O metodo de buscar o cep inválido.",

@@ -6,6 +6,7 @@ import br.com.viacep.stubs.CepStub;
 import br.com.viacep.utils.ExpectedJson;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,6 +18,7 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 public class zipCodeValidTestCase extends zipCodeValidBaseTest {
 
     @Epic("Teste Funcional")
+    @Feature("Teste o CEP com valido schema JSON.")
     @Description("O método de busca do CEP deve retornar o status 200.")
     @Test
     public void seachZipCodeSuccessfully200() throws IOException {
@@ -31,6 +33,7 @@ public class zipCodeValidTestCase extends zipCodeValidBaseTest {
     }
 
     @Epic("Teste Funcional")
+    @Feature("Teste o CEP com endereço e valido schema JSON.")
     @Description("O metodo de buscar o cep com endereço deve retornar o status 200.")
     @Test
     public void seachZipCodeWithAddressSuccessfully200() throws IOException {
@@ -45,6 +48,7 @@ public class zipCodeValidTestCase extends zipCodeValidBaseTest {
     }
 
     @Epic("Teste Funcional")
+    @Feature("Teste o CEP com Stub.")
     @Description("O método de buscar o CEP com Stub deve retornar o status 200.")
     @Test
     public void assertValidZipCodeWithStubSuccessfully200() {
