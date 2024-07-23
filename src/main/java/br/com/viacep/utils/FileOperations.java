@@ -23,8 +23,9 @@ public class FileOperations {
             prop.load(inputStream);
             return prop;
         } catch (Exception e){
-            System.out.println("Passando exception " + e.getMessage());
+            LoggerFactory.log_INFO("Passando exception " + e.getMessage());
         } finally {
+            assert inputStream != null;
             inputStream.close();
         }
         return prop;
@@ -37,7 +38,7 @@ public class FileOperations {
             prop.setProperty(propKey, propValue);
             prop.store(outputStream, null);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException (e);
         }
     }
 }

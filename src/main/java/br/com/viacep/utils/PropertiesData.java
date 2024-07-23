@@ -12,7 +12,7 @@ public class PropertiesData {
             Properties properties = getProperties("properties" + File.separator + fileName + ".properties");
             return properties.getProperty(property);
         } catch (Exception e) {
-            System.out.println("Não foi possível ler o arquivo " + e.getMessage());
+            LoggerFactory.log_INFO("Não foi possível ler o arquivo " + e.getMessage());
             return null;
         }
     }
@@ -21,7 +21,7 @@ public class PropertiesData {
         try {
             FileOperations.setProperties("properties" + File.separator + fileName + ".properties", propKey, propValue);
         } catch (Exception e) {
-            System.out.println("Não foi possível ler o arquivo" + e.getMessage());
+            LoggerFactory.log_INFO("Não foi possível ler o arquivo" + e.getMessage());
         }
     }
 }

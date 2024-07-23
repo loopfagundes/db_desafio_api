@@ -1,9 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name = "Via Cep" verbose="1">
-    <test name = "Teste de API - Via Cep">
+    <test name = "SUITES: Teste de API - Via Cep">
         <classes>
-            <class name="br.com.viacep.testcases.SeachZipCodeTestCase"/>
-            <class name="br.com.viacep.testcases.SeachZipCodeInvalidTestCase"/>
+            <class name="br.com.viacep.testcases.functionalTests.ZipCodeValidTestCase"/>
+            <class name="br.com.viacep.testcases.functionalTests.ZipCodeErroTestCase"/>
+            <class name="br.com.viacep.testcases.functionalTests.ZipCodeBadRequestTestCase"/>
+            <class name="br.com.viacep.testcases.contracts.ContractZipCodeTest"/>
+            <class name="br.com.viacep.testcases.performance.PerformaceTest"/>
         </classes>
     </test>
 </suite>
