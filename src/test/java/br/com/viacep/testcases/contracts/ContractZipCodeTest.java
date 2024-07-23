@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
+import static br.com.viacep.utils.ExpectedJson.*;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static org.hamcrest.Matchers.*;
@@ -26,7 +27,7 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
                     .get()
                 .then()
                     .spec(statusOK)
-                    .body(matchesJsonSchema(ExpectedJson.json("contracts", "zipCodeContract.json")))
+                    .body(matchesJsonSchema(json("contracts", "zipCodeContract.json")))
                     .body("$", hasKey("cep"))
                     .body("$", hasKey("logradouro"))
                     .body("$", hasKey("complemento"))
@@ -51,7 +52,7 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
                     .get()
                 .then()
                     .spec(statusOK)
-                    .body(matchesJsonSchema(ExpectedJson.json("contracts", "zipCodeContract.json")))
+                    .body(matchesJsonSchema(json("contracts", "zipCodeContract.json")))
                     .body("$", hasKey("cep")).body("cep", equalTo("90619-900"))
                     .body("$", hasKey("logradouro")).body("logradouro", equalTo("Avenida Ipiranga"))
                     .body("$", hasKey("complemento")).body("complemento", equalTo("6681"))
@@ -76,7 +77,7 @@ public class ContractZipCodeTest extends zipCodeValidBaseTest {
                     .get()
                 .then()
                     .spec(statusOK)
-                    .body(matchesJsonSchema(ExpectedJson.json("contracts", "zipCodeContract.json")))
+                    .body(matchesJsonSchema(json("contracts", "zipCodeContract.json")))
                     .body("$", hasKey("cep"))
                     .body("$", hasKey("logradouro"))
                     .body("$", hasKey("complemento"))

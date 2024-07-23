@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static org.hamcrest.Matchers.containsString;
 
 public class ZipCodeErroTestCase extends zipCodeErroBaseTest {
 
@@ -24,7 +25,7 @@ public class ZipCodeErroTestCase extends zipCodeErroBaseTest {
                 .then()
                     .log().body()
                     .spec(statusOK)
-                    .body(Matchers.containsString("\"erro\": \"true\""))
+                    .body(containsString("\"erro\": \"true\""))
                 .assertThat().body(matchesJsonSchemaInClasspath("schemas/schemaZipCodeErro.json"));
     }
 
@@ -40,7 +41,7 @@ public class ZipCodeErroTestCase extends zipCodeErroBaseTest {
                 .then()
                     .log().body()
                     .spec(statusOK)
-                    .body(Matchers.containsString("\"erro\": \"true\""))
+                    .body(containsString("\"erro\": \"true\""))
                     .assertThat().body(matchesJsonSchemaInClasspath("schemas/schemaZipCodeFaker.json"));
     }
 }
