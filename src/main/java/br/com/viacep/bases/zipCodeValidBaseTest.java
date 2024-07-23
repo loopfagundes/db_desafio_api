@@ -1,6 +1,6 @@
 package br.com.viacep.bases;
 
-import br.com.viacep.utils.endponits.EndpointConfig;
+import br.com.viacep.endponits.EndpointConfig;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;

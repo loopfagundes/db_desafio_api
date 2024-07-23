@@ -1,4 +1,4 @@
-package br.com.viacep.utils.endponits;
+package br.com.viacep.endponits;
 
 public class ServiceUrlPaths {
     public static String BASE_URI;

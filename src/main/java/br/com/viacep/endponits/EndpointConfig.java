@@ -1,4 +1,4 @@
-package br.com.viacep.utils.endponits;
+package br.com.viacep.endponits;
 
 import br.com.viacep.utils.FakeGenerator;
 import br.com.viacep.utils.PropertiesData;
