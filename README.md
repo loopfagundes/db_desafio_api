@@ -33,6 +33,10 @@
 
 :pushpin: [Java Faker](https://mvnrepository.com/artifact/com.github.javafaker/javafaker/1.0.2)
 
+:pushpin: [Jackson](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations/2.17.2)
+
+:pushpin: [Hamcrest](https://mvnrepository.com/artifact/org.hamcrest/hamcrest/2.2)
+
 ---
 ###  Pré-requisitos:
 Antes de começar, é necessária a instalar em sua máquina as seguintes ferramentas:
