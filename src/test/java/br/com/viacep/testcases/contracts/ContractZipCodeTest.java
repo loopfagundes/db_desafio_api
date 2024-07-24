@@ -1,7 +1,6 @@
 package br.com.viacep.testcases.contracts;
 
 import br.com.viacep.bases.zipCodeValidBaseTest;
-import br.com.viacep.utils.ExpectedJson;
 import br.com.viacep.utils.ZipCodeProvider;
 import io.qameta.allure.*;
 import org.apache.http.HttpStatus;
