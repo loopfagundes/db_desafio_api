@@ -1,6 +1,6 @@
 package br.com.viacep.testcases.contracts;
 
-import br.com.viacep.bases.zipCodeValidBaseTest;
+import br.com.viacep.bases.ZipCodeValidBaseTest;
 import br.com.viacep.utils.ZipCodeProvider;
 import io.qameta.allure.*;
 import org.apache.http.HttpStatus;
@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static org.hamcrest.Matchers.*;
 
-public class ContractZipCodeTest extends zipCodeValidBaseTest {
+public class ContractZipCodeTest extends ZipCodeValidBaseTest {
 
     @Epic("Teste de Contrato")
     @Feature("Teste o CEP e valido as chaves.")

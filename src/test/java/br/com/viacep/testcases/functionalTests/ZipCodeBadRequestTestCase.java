@@ -1,6 +1,6 @@
 package br.com.viacep.testcases.functionalTests;
 
-import br.com.viacep.bases.zipCodeBadRequestBaseTest;
+import br.com.viacep.bases.ZipCodeBadRequestBaseTest;
 import br.com.viacep.utils.ZipCodeProvider;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.containsString;
 
-public class ZipCodeBadRequestTestCase extends zipCodeBadRequestBaseTest {
+public class ZipCodeBadRequestTestCase extends ZipCodeBadRequestBaseTest {
 
     @Epic("Teste Funcional")
     @Feature("Teste o CEP vazio.")

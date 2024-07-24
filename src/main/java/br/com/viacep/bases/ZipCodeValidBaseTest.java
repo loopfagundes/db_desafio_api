@@ -9,7 +9,7 @@ import io.restassured.specification.ResponseSpecification;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.BeforeClass;
 
-public class zipCodeValidBaseTest extends EndpointConfig {
+public class ZipCodeValidBaseTest extends EndpointConfig {
     public static RequestSpecification baseUrl;
     public static RequestSpecification seachZipCodeRequest;
     public static RequestSpecification seachZipCodeWithAddressRequest;
