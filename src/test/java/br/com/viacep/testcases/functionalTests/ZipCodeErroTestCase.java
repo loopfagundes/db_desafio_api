@@ -22,10 +22,9 @@ public class ZipCodeErroTestCase extends ZipCodeErroBaseTest {
                 .when()
                     .get()
                 .then()
-                    .log().body()
                     .spec(statusOK)
                     .body(containsString("\"erro\": \"true\""))
-                .assertThat().body(matchesJsonSchemaInClasspath("schemas/schemaZipCodeErro.json"));
+                    .assertThat().body(matchesJsonSchemaInClasspath("schemas/schemaZipCodeErro.json"));
     }
 
     @Epic("Teste Funcional")
@@ -38,7 +37,6 @@ public class ZipCodeErroTestCase extends ZipCodeErroBaseTest {
                 .when()
                     .get()
                 .then()
-                    .log().body()
                     .spec(statusOK)
                     .body(containsString("\"erro\": \"true\""))
                     .assertThat().body(matchesJsonSchemaInClasspath("schemas/schemaZipCodeFaker.json"));

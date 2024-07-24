@@ -24,7 +24,6 @@ public class ZipCodeValidTestCase extends ZipCodeValidBaseTest {
                 .when()
                     .get()
                 .then()
-                    .log().body()
                     .spec(statusOK)
                     .assertThat().body(matchesJsonSchemaInClasspath("schemas/schemaZipCodeValid.json"));
     }
@@ -39,7 +38,6 @@ public class ZipCodeValidTestCase extends ZipCodeValidBaseTest {
                 .when()
                     .get()
                 .then()
-                    .log().body()
                     .spec(statusOK)
                     .assertThat().body(matchesJsonSchemaInClasspath("schemas/schemaZipCodeAddress.json"));
     }
@@ -55,7 +53,6 @@ public class ZipCodeValidTestCase extends ZipCodeValidBaseTest {
                     .get()
                 .then()
                     .spec(statusOK)
-                    .log().body()
                     .extract().as(CepDto.class);
         Assert.assertEquals(response.getCep(), CepStub.getCepStub().getCep());
         Assert.assertEquals(response.getLogradouro(), CepStub.getCepStub().getLogradouro());
