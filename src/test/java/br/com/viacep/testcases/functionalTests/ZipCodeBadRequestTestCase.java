@@ -36,7 +36,21 @@ public class ZipCodeBadRequestTestCase extends ZipCodeBadRequestBaseTest {
                 .when()
                     .get(zipCodeInvalid + "/json")
                 .then()
-                .spec(statusBadRequest)
+                    .spec(statusBadRequest)
+                    .body(containsString("Http 400"));
+    }
+
+    @Epic("Teste Funcional")
+    @Feature("Teste o CEP o minimo e maximo de caracteres.")
+    @Description("O método de busca do CEP o minimo e maximo de caracteres deve retornar o status 400.")
+    @Test(dataProvider = "zipCodeMinAndMaxProvider", dataProviderClass = ZipCodeProvider.class)
+    public void zipCodeSearchWithMinAndMaxCharactersBadRequest400(String zipCodeMinAndMaxCharacters) {
+        given()
+                    .spec(baseUrl)
+                .when()
+                    .get(zipCodeMinAndMaxCharacters + "/json")
+                .then()
+                    .spec(statusBadRequest)
                     .body(containsString("Http 400"));
     }
 
