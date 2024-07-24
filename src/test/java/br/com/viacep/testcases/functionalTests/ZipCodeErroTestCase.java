@@ -1,6 +1,6 @@
 package br.com.viacep.testcases.functionalTests;
 
-import br.com.viacep.bases.zipCodeErroBaseTest;
+import br.com.viacep.bases.ZipCodeErroBaseTest;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.containsString;
 
-public class ZipCodeErroTestCase extends zipCodeErroBaseTest {
+public class ZipCodeErroTestCase extends ZipCodeErroBaseTest {
 
     @Epic("Teste Funcional")
     @Feature("Teste o CEP erro.")

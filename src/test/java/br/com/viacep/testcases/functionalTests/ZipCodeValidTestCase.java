@@ -1,6 +1,6 @@
 package br.com.viacep.testcases.functionalTests;
 
-import br.com.viacep.bases.zipCodeValidBaseTest;
+import br.com.viacep.bases.ZipCodeValidBaseTest;
 import br.com.viacep.dto.CepDto;
 import br.com.viacep.stubs.CepStub;
 import io.qameta.allure.Description;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
-public class ZipCodeValidTestCase extends zipCodeValidBaseTest {
+public class ZipCodeValidTestCase extends ZipCodeValidBaseTest {
 
     @Epic("Teste Funcional")
     @Feature("Teste o CEP com valido schema JSON.")
