@@ -88,8 +88,8 @@ mvn clean
 mvn test
 ```
 ---
-#### Screenshot:
-![](src/main/resources/img/CapturaDeTelaDaAllureReport.png)
+#### Screenshot Allure Report:
+![](src/main/resources/img/ScreenshotAllureReport.png)
 
 ---
 *Funciona na minha máquina* :coffee: 
