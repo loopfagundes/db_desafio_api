@@ -22,6 +22,6 @@ public class PerformaceTest extends ZipCodeValidBaseTest {
                     .get()
                 .then()
                     .spec(statusOK)
-                    .time(lessThan(3000L));
+                    .time(lessThan(2000L));
     }
 }
