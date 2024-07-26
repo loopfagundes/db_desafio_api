@@ -17,7 +17,7 @@ public class PerformaceTest extends ZipCodeValidBaseTest {
     @Test
     public void quicklyForValidZipCodeSuccessfully200() {
         given()
-                    .spec(seachZipCodeRequest)
+                    .spec(searchZipCodeRequest)
                 .when()
                     .get()
                 .then()

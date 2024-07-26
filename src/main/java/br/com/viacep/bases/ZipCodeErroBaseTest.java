@@ -10,27 +10,27 @@ import org.apache.http.HttpStatus;
 import org.testng.annotations.BeforeClass;
 
 public class ZipCodeErroBaseTest extends EndpointConfig {
-    public static RequestSpecification seachZipCodeErroRequest;
-    public static RequestSpecification seachZipCodeFakerRequest;
+    public static RequestSpecification searchZipCodeErroRequest;
+    public static RequestSpecification searchZipCodeFakerRequest;
     public static ResponseSpecification statusOK;
 
     @BeforeClass
     public void setUp() {
-        seachZipCodeErroRequest();
-        seachZipCodeFakerRequest();
+        searchZipCodeErroRequest();
+        searchZipCodeFakerRequest();
         responseStatusOK();
     }
 
-    private void seachZipCodeErroRequest() {
-        seachZipCodeErroRequest = new RequestSpecBuilder()
+    private void searchZipCodeErroRequest() {
+        searchZipCodeErroRequest = new RequestSpecBuilder()
                 .setBaseUri(baseUri())
                 .setBasePath(basePathZipCodeErro())
                 .setContentType(ContentType.JSON)
                 .build();
     }
 
-    private void seachZipCodeFakerRequest() {
-        seachZipCodeFakerRequest = new RequestSpecBuilder()
+    private void searchZipCodeFakerRequest() {
+        searchZipCodeFakerRequest = new RequestSpecBuilder()
                 .setBaseUri(baseUri())
                 .setBasePath(basePathZipCodeFaker())
                 .setContentType(ContentType.JSON)

@@ -11,16 +11,16 @@ import org.testng.annotations.BeforeClass;
 
 public class ZipCodeValidBaseTest extends EndpointConfig {
     public static RequestSpecification baseUrl;
-    public static RequestSpecification seachZipCodeRequest;
-    public static RequestSpecification seachZipCodeWithAddressRequest;
+    public static RequestSpecification searchZipCodeRequest;
+    public static RequestSpecification searchZipCodeWithAddressRequest;
     public static RequestSpecification zipCodeFormattingRequest;
     public static ResponseSpecification statusOK;
 
     @BeforeClass
     public void setUp() {
         baseUrl();
-        seachZipCodeRequest();
-        seachZipCodeWithAddressRequest();
+        searchZipCodeRequest();
+        searchZipCodeWithAddressRequest();
         zipCodeFormattingRequest();
         responseStatusOK();
     }
@@ -32,8 +32,8 @@ public class ZipCodeValidBaseTest extends EndpointConfig {
                 .build();
     }
 
-    private void seachZipCodeRequest() {
-        seachZipCodeRequest = new RequestSpecBuilder()
+    private void searchZipCodeRequest() {
+        searchZipCodeRequest = new RequestSpecBuilder()
                 .setBaseUri(baseUri())
                 .setBasePath(basePathZipCode())
                 .setContentType(ContentType.JSON)
@@ -48,8 +48,8 @@ public class ZipCodeValidBaseTest extends EndpointConfig {
                 .build();
     }
 
-    private void seachZipCodeWithAddressRequest() {
-        seachZipCodeWithAddressRequest = new RequestSpecBuilder()
+    private void searchZipCodeWithAddressRequest() {
+        searchZipCodeWithAddressRequest = new RequestSpecBuilder()
                 .setBaseUri(baseUri())
                 .setBasePath(basePathAddress())
                 .setContentType(ContentType.JSON)
