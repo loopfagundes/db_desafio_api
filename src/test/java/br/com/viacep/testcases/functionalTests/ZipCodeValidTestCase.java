@@ -18,9 +18,9 @@ public class ZipCodeValidTestCase extends ZipCodeValidBaseTest {
     @Feature("Teste o CEP com valido schema JSON.")
     @Description("O método de busca do CEP deve retornar o status 200.")
     @Test
-    public void seachZipCodeSuccessfully200() {
+    public void searchZipCodeSuccessfully200() {
         given()
-                    .spec(seachZipCodeRequest)
+                    .spec(searchZipCodeRequest)
                 .when()
                     .get()
                 .then()
@@ -32,9 +32,9 @@ public class ZipCodeValidTestCase extends ZipCodeValidBaseTest {
     @Feature("Teste o CEP com endereço e valido schema JSON.")
     @Description("O metodo de buscar o CEP com endereço deve retornar o status 200.")
     @Test
-    public void seachZipCodeWithAddressSuccessfully200() {
+    public void searchZipCodeWithAddressSuccessfully200() {
         given()
-                    .spec(seachZipCodeWithAddressRequest)
+                    .spec(searchZipCodeWithAddressRequest)
                 .when()
                     .get()
                 .then()
@@ -48,7 +48,7 @@ public class ZipCodeValidTestCase extends ZipCodeValidBaseTest {
     @Test
     public void assertValidZipCodeWithStubSuccessfully200() {
         CepDto response = given()
-                    .spec(seachZipCodeRequest)
+                    .spec(searchZipCodeRequest)
                 .when()
                     .get()
                 .then()

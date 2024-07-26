@@ -18,7 +18,7 @@ public class ZipCodeErroTestCase extends ZipCodeErroBaseTest {
     @Test
     public void seachZipCodeErro200() {
         given()
-                    .spec(seachZipCodeErroRequest)
+                    .spec(searchZipCodeErroRequest)
                 .when()
                     .get()
                 .then()
@@ -33,7 +33,7 @@ public class ZipCodeErroTestCase extends ZipCodeErroBaseTest {
     @Test
     public void seachZipCodeFaker200() {
         given()
-                    .spec(seachZipCodeFakerRequest)
+                    .spec(searchZipCodeFakerRequest)
                 .when()
                     .get()
                 .then()

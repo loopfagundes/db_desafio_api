@@ -21,7 +21,7 @@ public class ContractZipCodeTest extends ZipCodeValidBaseTest {
     @Test
     public void validZipCodeSuccessfully200() throws IOException {
         given()
-                    .spec(seachZipCodeRequest)
+                    .spec(searchZipCodeRequest)
                 .when()
                     .get()
                 .then()
@@ -46,7 +46,7 @@ public class ContractZipCodeTest extends ZipCodeValidBaseTest {
     @Test
     public void equalsZipCodeSuccessfully200() throws IOException {
         given()
-                    .spec(seachZipCodeRequest)
+                    .spec(searchZipCodeRequest)
                 .when()
                     .get()
                 .then()
