@@ -6,11 +6,12 @@ import br.com.viacep.stubs.CepStub;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static org.hamcrest.Matchers.equalTo;
+import static org.testng.Assert.*;
 
 public class ZipCodeValidTestCase extends ZipCodeValidBaseTest {
 
@@ -38,7 +39,11 @@ public class ZipCodeValidTestCase extends ZipCodeValidBaseTest {
                 .when()
                     .get()
                 .then()
-                    .spec(statusOK)
+                    .spec(statusOK).log().all()
+                    .body("cep[0]", equalTo("91010-000"))
+                    .body("logradouro[0]", equalTo("Avenida Assis Brasil"))
+                    .body("localidade[0]", equalTo("Porto Alegre"))
+                    .body("uf[0]", equalTo("RS"))
                     .assertThat().body(matchesJsonSchemaInClasspath("schemas/schemaZipCodeAddress.json"));
     }
 
@@ -54,16 +59,16 @@ public class ZipCodeValidTestCase extends ZipCodeValidBaseTest {
                 .then()
                     .spec(statusOK)
                     .extract().as(CepDto.class);
-        Assert.assertEquals(response.getCep(), CepStub.getCepStub().getCep());
-        Assert.assertEquals(response.getLogradouro(), CepStub.getCepStub().getLogradouro());
-        Assert.assertEquals(response.getComplemento(), CepStub.getCepStub().getComplemento());
-        Assert.assertEquals(response.getUnidade(), CepStub.getCepStub().getUnidade());
-        Assert.assertEquals(response.getBairro(), CepStub.getCepStub().getBairro());
-        Assert.assertEquals(response.getLocalidade(), CepStub.getCepStub().getLocalidade());
-        Assert.assertEquals(response.getUf(), CepStub.getCepStub().getUf());
-        Assert.assertEquals(response.getIbge(), CepStub.getCepStub().getIbge());
-        Assert.assertEquals(response.getGia(), CepStub.getCepStub().getGia());
-        Assert.assertEquals(response.getDdd(), CepStub.getCepStub().getDdd());
-        Assert.assertEquals(response.getSiafi(), CepStub.getCepStub().getSiafi());
+        assertEquals(response.getCep(), CepStub.getCepStub().getCep());
+        assertEquals(response.getLogradouro(), CepStub.getCepStub().getLogradouro());
+        assertEquals(response.getComplemento(), CepStub.getCepStub().getComplemento());
+        assertEquals(response.getUnidade(), CepStub.getCepStub().getUnidade());
+        assertEquals(response.getBairro(), CepStub.getCepStub().getBairro());
+        assertEquals(response.getLocalidade(), CepStub.getCepStub().getLocalidade());
+        assertEquals(response.getUf(), CepStub.getCepStub().getUf());
+        assertEquals(response.getIbge(), CepStub.getCepStub().getIbge());
+        assertEquals(response.getGia(), CepStub.getCepStub().getGia());
+        assertEquals(response.getDdd(), CepStub.getCepStub().getDdd());
+        assertEquals(response.getSiafi(), CepStub.getCepStub().getSiafi());
     }
 }
