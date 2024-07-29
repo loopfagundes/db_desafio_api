@@ -39,7 +39,7 @@ public class ZipCodeValidTestCase extends ZipCodeValidBaseTest {
                 .when()
                     .get()
                 .then()
-                    .spec(statusOK).log().all()
+                    .spec(statusOK)
                     .body("cep[0]", equalTo("91010-000"))
                     .body("logradouro[0]", equalTo("Avenida Assis Brasil"))
                     .body("localidade[0]", equalTo("Porto Alegre"))
