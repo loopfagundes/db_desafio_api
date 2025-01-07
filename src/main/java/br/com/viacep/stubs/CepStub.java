@@ -13,6 +13,8 @@ public class CepStub {
         cep.setBairro("Partenon");
         cep.setLocalidade("Porto Alegre");
         cep.setUf("RS");
+        cep.setEstado("Rio Grande do Sul");
+        cep.setRegiao("Sul");
         cep.setIbge("4314902");
         cep.setGia("");
         cep.setDdd("51");
