@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-@JsonPropertyOrder({"cep", "logradouro", "complemento", "unidade", "bairro", "localidade", "uf", "ibge", "gia", "ddd", "siafi"})
+@JsonPropertyOrder({"cep", "logradouro", "complemento", "unidade", "bairro", "localidade", "uf", "estado", "regiao", "ibge", "gia", "ddd", "siafi"})
 public class CepDto {
     private String cep;
     private String logradouro;
@@ -15,6 +15,8 @@ public class CepDto {
     private String bairro;
     private String localidade;
     private String uf;
+    private String estado;
+    private String regiao;
     private String ibge;
     private String gia;
     private String ddd;

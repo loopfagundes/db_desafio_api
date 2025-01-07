@@ -66,6 +66,8 @@ public class ZipCodeValidTestCase extends ZipCodeValidBaseTest {
         assertEquals(response.getBairro(), CepStub.getCepStub().getBairro());
         assertEquals(response.getLocalidade(), CepStub.getCepStub().getLocalidade());
         assertEquals(response.getUf(), CepStub.getCepStub().getUf());
+        assertEquals(response.getEstado(), CepStub.getCepStub().getEstado());
+        assertEquals(response.getRegiao(), CepStub.getCepStub().getRegiao());
         assertEquals(response.getIbge(), CepStub.getCepStub().getIbge());
         assertEquals(response.getGia(), CepStub.getCepStub().getGia());
         assertEquals(response.getDdd(), CepStub.getCepStub().getDdd());

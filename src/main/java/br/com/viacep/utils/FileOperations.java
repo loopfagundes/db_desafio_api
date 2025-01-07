@@ -25,8 +25,9 @@ public class FileOperations {
         } catch (Exception e){
             LoggerFactory.log_INFO("Passando exception " + e.getMessage());
         } finally {
-            assert inputStream != null;
-            inputStream.close();
+            if (inputStream != null) {
+                inputStream.close();
+            }
         }
         return prop;
     }
